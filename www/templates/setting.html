@@ -1,0 +1,11 @@
+<ion-view view-title="Setting">
+  <ion-content>
+        
+        <ion-toggle ng-repeat="item in settings"
+                    ng-click="setToggle($index)"
+                    ng-checked="item.checked" >
+          {{ item.text }}
+        </ion-toggle>
+    
+  </ion-content>
+</ion-view>

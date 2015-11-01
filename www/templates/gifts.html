@@ -1,0 +1,21 @@
+<ion-view view-title="List of Gifts">
+    <ion-content ng-controller="GiftsCtrl">
+        <!-----gift item list----->
+        <ion-list >
+            <ion-item class="item item-checkbox item-icon-right" ng-repeat="gift in gifts track by $index">
+                <label class="checkbox">
+                    <input type="checkbox" ng-checked="{{gift.checked}}" ng-click="setChecker($index)"/>
+                </label>
+                {{gift.text}}
+                <a class="button button-icon icon icon-right ion-close-circled assertive" ng-click="removeGift(gift)"></a>
+            </ion-item>
+        </ion-list>
+        <!-----add a new gift to the list----->
+        <form ng-submit="addGift()">
+            <label class="item item-input">
+                <input ng-model="newGift" type="text" placeholder="Enter a gift here"/>
+            </label>
+            <button class="button button-block button-positive" type="submit">ADD GIFT</button>
+        </form>
+    </ion-content>
+</ion-view>
