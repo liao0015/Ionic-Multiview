@@ -69,8 +69,8 @@ angular.module('starter.controllers', [])
 })
 
 .controller("NamesCtrl", function($scope, LocalStorageService, $cordovaVibration, $cordovaLocalNotification){
-    //sync $scope with $localStorage
-   
+    
+    //sync $scope with $localStorage 'nameList'
     if(LocalStorageService.getStorageList('nameList')){
         $scope.names = JSON.parse(LocalStorageService.getStorageList('nameList'));
     }
@@ -95,8 +95,8 @@ angular.module('starter.controllers', [])
             $scope.counter ++;
             // Vibrate 100ms when is checked
             if($scope.settings[0].checked){
-                alert("vibration checked");
-                //$cordovaVibration.vibrate(100);
+                //alert("vibration checked");
+                $cordovaVibration.vibrate(100);
             }
         }
         
@@ -108,11 +108,10 @@ angular.module('starter.controllers', [])
             }
         }
         if($scope.counter == $scope.names.length){
-            alert("full name list");
+            //alert("full name list");
             //send out a push notification upon a full list 
             if($scope.settings[1].checked){
-                alert("notification checked");
-                 /*
+                //alert("notification checked");  
                 $cordovaLocalNotification.schedule({
                     id: 1,
                     title: "Name List Notification",
@@ -123,7 +122,7 @@ angular.module('starter.controllers', [])
                   }).then(function (result) {
                     console.log(result);
                   });
-                  */
+                  
               }
         }
     };
@@ -150,7 +149,7 @@ angular.module('starter.controllers', [])
 
 .controller("GiftsCtrl", function($scope, LocalStorageService, $cordovaVibration, $cordovaLocalNotification){
     
-    //sync $scope with $localStorage
+    //sync $scope with $localStorage 'giftList'
      if(LocalStorageService.getStorageList('giftList')){
         $scope.gifts = JSON.parse(LocalStorageService.getStorageList('giftList'));
     }
@@ -173,8 +172,8 @@ angular.module('starter.controllers', [])
             $scope.counter ++;
             // Vibrate 100ms when is checked
             if($scope.settings[0].checked){
-                alert("vibration checked");
-                //$cordovaVibration.vibrate(100);
+                //alert("vibration checked");
+                $cordovaVibration.vibrate(100);
             }
         }
         
@@ -189,8 +188,8 @@ angular.module('starter.controllers', [])
             alert("full gift list");
             //send out a push notification upon a full list 
             if($scope.settings[1].checked){
-                alert("notification checked");
-                /*$cordovaLocalNotification.schedule({
+                //alert("notification checked");
+                $cordovaLocalNotification.schedule({
                 id: 1,
                 title: "Gift List Notification",
                 text: "Gift list is all checked",
@@ -199,7 +198,7 @@ angular.module('starter.controllers', [])
                 }
                 }).then(function (result) {
                 console.log(result);
-                });*/
+                });
             }
         }
     };
@@ -226,7 +225,7 @@ angular.module('starter.controllers', [])
 
 .controller("HolidaysCtrl", function($scope, LocalStorageService, $cordovaVibration, $cordovaLocalNotification){
     
-    //sync $scope with $localStorage
+    //sync $scope with $localStorage 'holidayList'
     if(LocalStorageService.getStorageList('holidayList')){
         $scope.holidays = JSON.parse(LocalStorageService.getStorageList('holidayList'));
     }
@@ -249,8 +248,8 @@ angular.module('starter.controllers', [])
             $scope.counter ++;
             // Vibrate 100ms when is checked
             if($scope.settings[0].checked){
-                alert("vibration checked");
-                //$cordovaVibration.vibrate(100);  
+                //alert("vibration checked");
+                $cordovaVibration.vibrate(100);  
             }
         }
         
@@ -266,8 +265,8 @@ angular.module('starter.controllers', [])
             
             //send out a push notification upon a full list 
             if($scope.settings[1].checked){
-                alert("notification checked");
-                /*$cordovaLocalNotification.schedule({
+                //alert("notification checked");
+                $cordovaLocalNotification.schedule({
                 id: 1,
                 title: "Holiday List Notification",
                 text: "Holiday list is all checked",
@@ -276,7 +275,7 @@ angular.module('starter.controllers', [])
                 }
                 }).then(function (result) {
                 console.log(result);
-                });*/
+                });
             }
         }
     };
