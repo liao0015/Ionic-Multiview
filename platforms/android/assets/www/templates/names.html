@@ -1,0 +1,21 @@
+<ion-view view-title="List of Names">
+    <ion-content ng-controller="NamesCtrl">
+        <!-----name list----->
+        <ion-list>
+            <ion-item class="item item-checkbox item-icon-right" ng-repeat="name in names track by $index">
+                <label class="checkbox">
+                    <input type="checkbox" ng-checked="{{name.checked}}" ng-click="setChecker($index)"/>
+                </label>
+                {{name.text}}
+                <a class="button button-icon icon icon-right ion-close-circled assertive" ng-click="removeName(name)"></a>
+            </ion-item>
+        </ion-list>
+        <!-----add a new name to the list----->
+        <form ng-submit="addName()">
+            <label class="item item-input">
+                <input ng-model="newName" type="text" placeholder="Enter a name here"/>
+            </label>
+            <button class="button button-block button-positive" type="submit">ADD NAME</button>
+        </form>
+    </ion-content>
+</ion-view>

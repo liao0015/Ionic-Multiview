@@ -261,7 +261,7 @@ angular.module('starter.controllers', [])
             }
         }
         if($scope.counter == $scope.holidays.length){
-            alert("full holiday list");
+            //alert("full holiday list");
             
             //send out a push notification upon a full list 
             if($scope.settings[1].checked){
